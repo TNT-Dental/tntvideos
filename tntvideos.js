@@ -54,6 +54,13 @@ $('.youtube').each(function () {
 	});
 });  
 
+/* TNT Videos 1.2
+/* Small update for vimeo with static, use data-vimeo-static=true */
+
+/* NEW Close button string option */
+/* Fixed duplicate buttons */
+/* Responsive Vimeo Solo ***must include .thumbnail */
+
 (function($){ 
 	$.fn.extend({          
 		tntvideos: function(options) { 
@@ -76,12 +83,12 @@ $('.youtube').each(function () {
 				var vid_obj = $(this);
 				var vid_type = vid_obj.data('player');								
 								
-				if ( $(window).width() > o.mobileWidth ) {
+				if ( $(window).width() > o.mobileWidth && !vid_obj.data("static") ) {
 						if (vid_type == "vimeo" || vid_type == "vimeo-solo") {							
 							$(this).find(".thumbnail").remove();
 							setupVimeo(vid_obj);					
-						}
-				}					
+						}	
+				}				
 				if ($(window).width() < o.mobileWidth ) {
 					$(this).find(o.playButton).appendTo($(this).find("[data-embed]"));
 				}	
@@ -108,7 +115,7 @@ $('.youtube').each(function () {
 					}
 					
 					if (vid_type=="vimeo-solo") {
-						if ($(window).width() < o.mobileWidth) {							
+						if ($(window).width() < o.mobileWidth || vid_obj.data("static")) {							
 					  	setupVimeo(vid_obj);
 						}
 						playVimeoSolo(vid_obj, closeBtn, closeBtnString);											
@@ -144,7 +151,7 @@ $('.youtube').each(function () {
 					
 					var vid_stop = true;
 					if (vid_type == "vimeo-solo") {
-						if ( $(window).width() < options.mobileWidth ) {
+						if ( $(window).width() < options.mobileWidth || vid_obj.data("static") ) {
 							  vid_obj.find('video').remove();						
 						} else {
 						 playVimeoSolo(vid_obj, closeBtn, closeBtnString, vid_stop);
@@ -179,9 +186,8 @@ $('.youtube').each(function () {
 			}
 			//extra function to setup vimeo legacy code		
 			function playVimeoSolo(vid_obj, closeBtn, closeBtnString, vid_stop) {
-				var video = vid_obj.find("video");		
-								
-				if (vid_stop){	
+				var video = vid_obj.find("video");					
+				if (vid_stop) {	
 					vid_obj.removeClass("playing");
 					video.attr({
 						"controls": "false",
@@ -202,7 +208,7 @@ $('.youtube').each(function () {
 					video[0].currentTime = 0;
 					video[0].muted = 0;
 					video[0].controls = 1;
-				}
+				}				
 			}
 
 			function playYoutube(vid_obj, closeBtn, closeBtnString) {
