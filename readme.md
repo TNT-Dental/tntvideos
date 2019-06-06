@@ -1,5 +1,12 @@
-# TNT Videos ver1.1
+# TNT Videos ver1.2
 Jquery code for TNT banners and optimized youtube videos with lazyload.
+
+v 1.2
+- Small update for vimeo with static, use data-vimeo-static=true
+v 1.1
+- NEW Close button string option
+- Fixed duplicate buttons
+- Responsive Vimeo Solo, must include .thumbnail 
 
 ## Dependents
 - Get Device 
@@ -59,6 +66,11 @@ $(function () {
 | offset: Int | By default the offset is the height of the header, you can also use an integer.  |
 | onPlay: function() | Callback function for the play button  |
 | onClose: function() | Callback function for the close button |
+
+## Video Items Data Options
+|  Defaults | Description  |
+| ------------ | ------------ |
+| data-static="true" | Use this with vimeo-solo player for static banners  |
 
 ## Banner Vimeo width Youtube Player(Normal) HTML
 ```html
