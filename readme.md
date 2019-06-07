@@ -1,9 +1,10 @@
 # TNT Videos ver1.2
 Jquery code for TNT banners and optimized youtube videos with lazyload.
 
-v 1.2
-- Small update for vimeo with static, use data-vimeo-static=true
-v 1.1
+####v 1.2
+- Small update for vimeo with static, use data-static=true to vimeo-solo players
+
+####v 1.1
 - NEW Close button string option
 - Fixed duplicate buttons
 - Responsive Vimeo Solo, must include .thumbnail 
