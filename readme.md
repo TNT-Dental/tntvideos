@@ -2,7 +2,7 @@
 Jquery code for TNT banners and optimized youtube videos with lazyload.
 
 #### v 1.2
-- Small update for vimeo with static, use data-static=true to vimeo-solo players
+- Small update for vimeo with static, use data-mode="static" to vimeo-solo players
 
 #### v 1.1
 - NEW Close button string option
@@ -71,7 +71,7 @@ $(function () {
 ## Video Items Data Options
 |  Defaults | Description  |
 | ------------ | ------------ |
-| data-static="true" | Use this with vimeo-solo player for static banners  |
+| data-mode="static" | Use this with vimeo-solo player for static banners  |
 
 ## Banner Vimeo width Youtube Player(Normal) HTML
 ```html
