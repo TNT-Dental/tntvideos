@@ -2,7 +2,7 @@
 Jquery code for TNT banners and optimized youtube videos with lazyload.
 
 #### v 1.2
-- Small update for vimeo with static, use data-mode="static" to vimeo-solo players
+- Small update for static banners, use data-mode="static" to vimeo players
 - New responsive play append for mobile, use data-mobile-append-play="" 
 
 #### v 1.1
