@@ -100,6 +100,19 @@ $(function () {
     </div> 
 ```
 
+## Banner Vimeo width Static Option HTML
+```html
+    <div class="banner" data-player="vimeo" data-mode="static" data-vimeo="null">
+    	<div data-embed="yEkWVQywXIE" data-width="560" data-height="315">
+    		<img alt="youtube thumbnail" class="thumbnail" src="https://img.youtube.com/vi/yEkWVQywXIE/maxresdefault.jpg">
+    	</div>
+    	<div class="caption">
+    		<h1>example caption</h1>
+    		<a class="play">Play Video</a>
+    	</div>
+    </div>
+```
+
 ## Banner Youtube Player HTML
 ```html
     <div class="banner" data-player="youtube">
