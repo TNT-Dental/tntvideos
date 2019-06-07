@@ -3,6 +3,7 @@ Jquery code for TNT banners and optimized youtube videos with lazyload.
 
 #### v 1.2
 - Small update for vimeo with static, use data-mode="static" to vimeo-solo players
+- New responsive play append for mobile, use data-mobile-append-play="" 
 
 #### v 1.1
 - NEW Close button string option
@@ -64,6 +65,7 @@ $(function () {
 | animate: true  | Scroll animation to the top of the container  |
 | bodyPlaying: null | Add a body playing class |
 | mobileWIdth: 900 | Responsive width |
+| mobileAppendPlay: null | Responsive attach play button |
 | offset: Int | By default the offset is the height of the header, you can also use an integer.  |
 | onPlay: function() | Callback function for the play button  |
 | onClose: function() | Callback function for the close button |
@@ -71,7 +73,8 @@ $(function () {
 ## Video Items Data Options
 |  Defaults | Description  |
 | ------------ | ------------ |
-| data-mode="static" | Use this with vimeo-solo player for static banners  |
+| data-mode="static" | Use this with vimeo players for static banners  |
+| data-mobile-append-play="[data-embed]" | Option to attach the play button on responsive.  |
 
 ## Banner Vimeo width Youtube Player(Normal) HTML
 ```html
