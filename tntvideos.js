@@ -204,6 +204,7 @@ $('.youtube').each(function () {
 					});
 					video[0].muted = 1;
 					video[0].controls = 0;
+					video[0].play();
 				}else {    
 					vid_obj.addClass("playing")
 						.find("[data-embed]")
