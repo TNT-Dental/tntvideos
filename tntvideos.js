@@ -85,12 +85,10 @@ $('.youtube').each(function () {
 				var closeBtn = o.closeButton.replace(/\./g, '');
 				var vid_obj = $(this);
 				var vid_type = vid_obj.data('player');								
-								
-				if ( $(window).width() > o.mobileWidth && vid_obj.data("mode") != "static") {
-						if (vid_type == "vimeo" || vid_type == "vimeo-solo") {							
-							$(this).find(".thumbnail").remove();
-							setupVimeo(vid_obj);					
-						}	
+				
+				if (vid_type == "vimeo" || vid_type == "vimeo-solo" && vid_obj.data("mode") != "static") {						
+						$(this).find(".thumbnail").remove();
+						setupVimeo(vid_obj);					
 				}				
 				if ($(window).width() < o.mobileWidth ) {			
 						//append play button
@@ -125,7 +123,7 @@ $('.youtube').each(function () {
 					}
 					
 					if (vid_type=="vimeo-solo") {
-						if ($(window).width() < o.mobileWidth || vid_obj.data("mode") == "static") {							
+						if ($(window).width() < o.mobileWidth && vid_obj.data("mode") == "static") {					
 					  	setupVimeo(vid_obj);
 						}
 						playVimeoSolo(vid_obj, closeBtn, closeBtnString);											
@@ -161,7 +159,7 @@ $('.youtube').each(function () {
 					
 					var vid_stop = true;
 					if (vid_type == "vimeo-solo") {
-						if ( $(window).width() < options.mobileWidth || vid_obj.data("mode") == "static" ) {
+						if ( $(window).width() < options.mobileWidth && vid_obj.data("mode") == "static" ) {
 							  vid_obj.find('video').remove();						
 						} else {
 						 playVimeoSolo(vid_obj, closeBtn, closeBtnString, vid_stop);
