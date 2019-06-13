@@ -10,6 +10,10 @@ Jquery code for TNT banners and optimized youtube videos with lazyload.
 - Fixed duplicate buttons
 - Responsive Vimeo Solo, must include .thumbnail 
 
+#### Known Issues
+- Vimeo profile IDs, currently set to one profile ID
+- Turn off animations on responsive.
+
 ## Dependents
 - Get Device 
 - Retrieve Youtube
