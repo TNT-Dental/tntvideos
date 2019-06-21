@@ -86,11 +86,16 @@ $('.youtube').each(function () {
 				var vid_obj = $(this);
 				var vid_type = vid_obj.data('player');								
 				
-				if (vid_type == "vimeo" || vid_type == "vimeo-solo" && vid_obj.data("mode") != "static") {						
-						$(this).find(".thumbnail").remove();
-						setupVimeo(vid_obj);					
-				}				
-				if ($(window).width() < o.mobileWidth ) {			
+				if ( $(window).width() > o.mobileWidth ) {
+					if (vid_type == "vimeo-solo" && vid_obj.data("mode") == "static") {	
+						//do nothing for now
+					} else if ( vid_type != "youtube") {
+							$(this).find(".thumbnail").remove();	
+							setupVimeo(vid_obj);	
+					}
+				}						
+				
+				if ($(window).width() < o.mobileWidth ) {								 				
 						//append play button
 						if (o.mobileAppendPlay != null && !$(this).data("mobile-append-play") ) { 		
 							$(this).find(o.playButton).appendTo( $(this).find(o.mobileAppendPlay) );	
@@ -100,6 +105,8 @@ $('.youtube').each(function () {
 							$(this).find(o.playButton).appendTo( $(this).find("[data-embed]") );								
 						}
 				}	
+				
+				//custom close button
 				if (o.closeButtonString != null) {
 					var closeBtnString = o.closeButtonString;
 				} else {
@@ -122,11 +129,9 @@ $('.youtube').each(function () {
 						playYoutube(vid_obj, closeBtn, closeBtnString);
 					}
 					
-					if (vid_type=="vimeo-solo") {
-						if ($(window).width() < o.mobileWidth && vid_obj.data("mode") == "static") {					
-					  	setupVimeo(vid_obj);
-						}
-						playVimeoSolo(vid_obj, closeBtn, closeBtnString);											
+					if (vid_type=="vimeo-solo") {						
+						setupVimeo(vid_obj);
+						playVimeoSolo(vid_obj, closeBtn, closeBtnString);			
 					}
 					
 					if ($(window).width() > o.mobileWidth && o.animate == true) {
@@ -162,6 +167,7 @@ $('.youtube').each(function () {
 						if ( $(window).width() < options.mobileWidth && vid_obj.data("mode") == "static" ) {
 							  vid_obj.find('video').remove();						
 						} else {
+							vid_obj.find('video').remove();		
 						 playVimeoSolo(vid_obj, closeBtn, closeBtnString, vid_stop);
 						}
 					}
