@@ -50,11 +50,9 @@ img {
 }
 /* --- end foundation --- */
 [data-player],
-[data-vimeo], 
 [data-embed] {
 	position: relative;
 }
-[data-vimeo] .play,
 [data-embed] .close,
 [data-vimeo] .close {
 	background-color: #00a5be;
@@ -62,7 +60,6 @@ img {
 	padding: 11px;
 	text-transform: uppercase;
 }
-[data-vimeo] .play:hover,
 [data-embed] .close:hover,
 [data-vimeo] .close:hover {
 	background-color: #464646;
