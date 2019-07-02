@@ -129,9 +129,11 @@ $('.youtube').each(function () {
 						playYoutube(vid_obj, closeBtn, closeBtnString);
 					}
 					
-					if (vid_type=="vimeo-solo") {						
+					if ($(window).width() < o.mobileWidth || vid_obj.data("mode") == "static") {	
 						setupVimeo(vid_obj);
 						playVimeoSolo(vid_obj, closeBtn, closeBtnString);			
+					} else if (vid_type="vimeo-solo") {
+						playVimeoSolo(vid_obj, closeBtn, closeBtnString);
 					}
 					
 					if ($(window).width() > o.mobileWidth && o.animate == true) {
@@ -147,7 +149,7 @@ $('.youtube').each(function () {
 					options.onPlay.call(this);
 					return false;
 				});
-
+				//CLOSE BUTTON
 				$(this).on("click", o.closeButton, function () {					
 					var vid_obj = $(this).parents("[data-player]");	
 					var vid_type = vid_obj.data('player');
@@ -164,10 +166,10 @@ $('.youtube').each(function () {
 					
 					var vid_stop = true;
 					if (vid_type == "vimeo-solo") {
-						if ( $(window).width() < options.mobileWidth && vid_obj.data("mode") == "static" ) {
+						if ( $(window).width() < options.mobileWidth || vid_obj.data("mode") == "static" ) {
 							  vid_obj.find('video').remove();						
 						} else {
-							vid_obj.find('video').remove();		
+							//vid_obj.find('video').remove();		
 						 playVimeoSolo(vid_obj, closeBtn, closeBtnString, vid_stop);
 						}
 					}
