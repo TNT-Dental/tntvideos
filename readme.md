@@ -33,7 +33,7 @@ $(function () {
 ### Basic Options 
 ```javascript
 $(function () {			
-	//defaults
+	//tnvideos defaults
 	$("[data-player]").tntvideos({		
 		playButton: '.play',
 		closeButton: '.close',
