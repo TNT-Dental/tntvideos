@@ -85,6 +85,7 @@ $(function () {
 | data-mobile-append-play="[data-embed]" | Option to attach the play button on responsive.  |
 
 ## Banner Vimeo width Youtube Player(Normal) HTML
+Default mode player shows a vimeo preview and on play renders a youtube video(thumbnail is genereated or can be custom)
 ```html
     <div class="banner" data-player="vimeo" data-vimeo="290738166.hd.mp4?s=ee27ae407692d8723a18b6c5e43356c7caac01a6">
     	<div data-embed="yEkWVQywXIE" data-width="560" data-height="315">
@@ -98,9 +99,12 @@ $(function () {
 ```
     
 ## Banner Vimeo Solo Player HTML
+For legacy banners banner previews a full vimeo video, on play the same vimeo video plays. (must have thumbnail image for responsive)
 ```html
     <div class="banner" data-player="vimeo-solo" data-vimeo="290738166.hd.mp4?s=ee27ae407692d8723a18b6c5e43356c7caac01a6">
-    	<div data-embed="290738166" data-width="560" data-height="315"></div>
+    	<div data-embed="null" data-width="560" data-height="315">
+		<img alt="thumbnail" class="thumbnail" src="assets/images/video-static.jpg">    
+	</div>
     	<div class="caption">
     		<h1>example caption</h1>
     		<a class="play">Play Video</a>
@@ -109,10 +113,11 @@ $(function () {
 ```
 
 ## Banner Vimeo width Static Option HTML
+Player shows a user made static image and plays a vimeo video (must have thumbnail image)
 ```html
-    <div class="banner" data-player="vimeo" data-mode="static" data-vimeo="null">
-    	<div data-embed="yEkWVQywXIE" data-width="560" data-height="315">
-    		<img alt="youtube thumbnail" class="thumbnail" src="https://img.youtube.com/vi/yEkWVQywXIE/maxresdefault.jpg">
+    <div class="banner" data-player="vimeo-solo" data-mode="static" data-vimeo="290738166.hd.mp4?s=ee27ae407692d8723a18b6c5e43356c7caac01a6">
+    	<div data-embed="null" data-width="560" data-height="315">
+    		<img alt="thumbnail" class="thumbnail" src="assets/images/video-static.jpg">
     	</div>
     	<div class="caption">
     		<h1>example caption</h1>
@@ -122,6 +127,7 @@ $(function () {
 ```
 
 ## Banner Youtube Player HTML
+Uses a static image or generates an image from youtube api, plays a youtube video.
 ```html
     <div class="banner" data-player="youtube">
     	<div data-embed="yEkWVQywXIE" data-width="560" data-height="315"></div>
@@ -133,7 +139,7 @@ $(function () {
 Include a custom image thumbnail or leave the container empty to use the default high resolution image from the youtube video.
 ```html
 	<div class="youtube" data-embed="Ivx8TAcGKP8" data-width="560" data-height="315">
-		<img alt="youtube thumbnail" class="thumbnail" src="mycustomthumbnail.jpg">
+		<img alt="youtube thumbnail" class="thumbnail" src="https://img.youtube.com/vi/Ivx8TAcGKP8/maxresdefault.jpg">
 	</div>
 ```
 
