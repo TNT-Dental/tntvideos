@@ -1,5 +1,9 @@
-# TNT Videos ver1.2
+# TNT Videos ver1.3
 Jquery code for TNT banners and optimized youtube videos with lazyload.
+
+#### v 1.3
+- SWAP for vimeo-solo option with data-mode="swap"
+- Update/fix button's logic statements
 
 #### v 1.2
 - Small update for static banners, use data-mode="static" to vimeo players
